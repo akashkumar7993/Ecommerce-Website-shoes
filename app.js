@@ -599,10 +599,500 @@ fetch(url).then((Response => Response.json())).then((data) => {
 
 
 
+    let right_input = document.getElementById('right_input');
+    let left_input = document.getElementById('left_input');
+    let right_input_icon = document.getElementById('right_input_icon');
+    let left_input_icon = document.getElementById('left_input_icon');
+    
+   
+
+    left_input.addEventListener('change', ()=> {
+        let array_1000_50000 = all_shoes_array.filter((el) => {
+            return el.Price <= 50000;
+        })
+
+        left_input_icon.style.left = left_input.value+'%';
+        let price_box_value_left = (50000 / 100)*left_input.value;
+        document.getElementById(id="left_input_price").innerHTML =(price_box_value_left);
+        let array_1000_50000_left = array_1000_50000.filter((el) =>{
+            return el.Price >= price_box_value_left;
+        })
+        main_shoes_bx.innerHTML = '';
+        array_1000_50000_left.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });   
+    })
+
+//  right_input    
+
+    right_input.addEventListener('change', ()=> {
+        right_input_icon.style.left = right_input.value+'%';
+        let price_box_value_right = (50000 / 100)*right_input.value;
+        document.getElementById(id="right_input_price").innerHTML =(price_box_value_right + 50000);
+        let array_50001_100000 = all_shoes_array.filter((el) => {
+            return el.Price >= 50000;
+        })
+
+        let array_50001_100000_right = array_50001_100000.filter((el) =>{
+            return el.Price >= (price_box_value_right+50000);
+        })
+        main_shoes_bx.innerHTML = '';
+        array_50001_100000_right.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });   
+    })
 
 
+    // color part 
+    const color = ['white', 'gray-white', 'yellow', 'yellow-black', 'orange', 'green', 'sky-blue', 'pink', 'red', 'blue', 'gray-black','brown', "black"]
+    Array.from(document.getElementsByClassName('color')).forEach((el, i) => {
+        el.addEventListener('click', () => {
+            const color_array = all_shoes_array.filter((el) =>{
+            return el.ColorTag === color[i];
+            });
+            main_shoes_bx.innerHTML = '';
+
+            color_array.forEach((el, i) => {
+                const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                <h5 class="card_title" title="${Name}">${Name}</h5>
+                <p>${Category} Shoes</p>
+                <div class="price">
+                    <h5>Rs ${Price}</h5>
+                    <h5>MRP: <del>Rs ${MRP}</del></h5>
+                </div>
+                <div class="color_tag">
+                    <h6>Color ${Color}</h6>
+                    <h6>${Tag}</h6>
+                </div>`;
+                main_shoes_bx.appendChild(card);
+            });  
+        })
+    })
+
+    document.getElementsByClassName('colors')[0].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+            all_shoes_array.forEach((el, i) => {
+                const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+                let card = document.createElement('a');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${Img}" alt="${Name}">
+                <h5 class="card_title" title="${Name}">${Name}</h5>
+                <p>${Category} Shoes</p>
+                <div class="price">
+                    <h5>Rs ${Price}</h5>
+                    <h5>MRP: <del>Rs ${MRP}</del></h5>
+                </div>
+                <div class="color_tag">
+                    <h6>Color ${Color}</h6>
+                    <h6>${Tag}</h6>
+                </div>`;
+                main_shoes_bx.appendChild(card);
+            });  
+    })
 
 
+    // Size aside part
+    const number = [4,7,9,6,8,8,10,11,9,16,17,18,11,8]
+
+    // shoe size number 4
+    document.getElementsByClassName('size')[0].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size4 === number[0];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 7
+    document.getElementsByClassName('size')[1].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size7 === number[1];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+
+    
+    // shoe size number 9
+    document.getElementsByClassName('size')[2].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size9 === number[2];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 6
+    document.getElementsByClassName('size')[3].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size6 === number[3];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+
+    
+    // shoe size number 4
+    document.getElementsByClassName('size')[4].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size8 === number[4];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+
+    
+    // shoe size number 10
+    document.getElementsByClassName('size')[5].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size8 === number[5];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 10
+    document.getElementsByClassName('size')[6].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size10 === number[6];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 11
+    document.getElementsByClassName('size')[7].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size11 === number[7];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+
+    
+    // shoe size number 9
+    document.getElementsByClassName('size')[8].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size9 === number[8];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 16
+    document.getElementsByClassName('size')[9].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size16 === number[9];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 17
+    document.getElementsByClassName('size')[10].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size16 === number[10];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 18
+    document.getElementsByClassName('size')[11].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size18 === number[11];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 11
+    document.getElementsByClassName('size')[12].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size11 === number[12];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
+    
+    // shoe size number 8
+    document.getElementsByClassName('size')[13].addEventListener('click', ()=>{
+        main_shoes_bx.innerHTML = '';
+
+        let number_array =  all_shoes_array.filter(el =>{
+            return el.Size8 === number[13];
+        })
+        number_array.forEach((el, i) => {
+            const{Img, Name, Category, MRP, Price, Tag, Color} = el;
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.innerHTML = `<img src="${Img}" alt="${Name}">
+            <h5 class="card_title" title="${Name}">${Name}</h5>
+            <p>${Category} Shoes</p>
+            <div class="price">
+                <h5>Rs ${Price}</h5>
+                <h5>MRP: <del>Rs ${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+                <h6>Color ${Color}</h6>
+                <h6>${Tag}</h6>
+            </div>`;
+            main_shoes_bx.appendChild(card);
+        });  
+    })
 
 
 

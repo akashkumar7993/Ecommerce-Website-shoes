@@ -12,7 +12,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Force 1 Mid QS.webp",
         "Type": "Air Force",
         "ColorTag": "green"
@@ -30,7 +30,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 0,
+        "Size11": 0,
         "Img": "images/Nike Air Force 1 Mid React.webp",
         "Type": "Air Force",
         "ColorTag": "white"
@@ -48,7 +48,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 0,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Force 1'07 LV8.webp",
         "Type": "Air Force",
         "ColorTag": "black"
@@ -66,7 +66,7 @@
         "Size8": 0,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Max 90 GTX.webp",
         "Type": "Air Max",
         "ColorTag": "gary-black"
@@ -84,7 +84,7 @@
         "Size8": 0,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Max 90 SE.webp",
         "Type": "Air Max",
         "ColorTag": "white"
@@ -102,7 +102,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 0,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Max 95 SE.webp",
         "Type": "Air Max",
         "ColorTag": "red"
@@ -120,7 +120,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 0,
+        "Size11": 0,
         "Img": "images/Nike Air Max 97 SE.webp",
         "Type": "Air Max",
         "ColorTag": "gary-white"
@@ -138,7 +138,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Max 97 SE.jpg",
         "Type": "Air Max",
         "ColorTag": "yellow"
@@ -156,7 +156,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Max 270.webp",
         "Type": "Air Max",
         "ColorTag": "sky-blue"
@@ -174,7 +174,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 0,
+        "Size11": 0,
         "Img": "images/Nike Air Max Flyknit Racer.webp",
         "Type": "Air Max",
         "ColorTag": "black"
@@ -187,12 +187,12 @@
         "Price": 23323,
         "MRP": 28274,
         "Tag": "Promo Exclusion",
-        "Size6": 0,
+        "Size4": 4,
         "Size7": 7,
         "Size8": 0,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Max TW.webp",
         "Type": "Air Max",
         "ColorTag": "red"
@@ -210,7 +210,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air More Uptempo '96.webp",
         "Type": "Nike Dunk",
         "ColorTag": "sky-blue"
@@ -228,7 +228,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 0,
-        "Size11.5": 0,
+        "Size11": 0,
         "Img": "images/Nike Air Pegasus 83 Premium.webp",
         "Type": "Pegasus",
         "ColorTag": "gary-white"
@@ -246,7 +246,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 0,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Air Zoom Pegasus 39 Shield.webp",
         "Type": "Zoom Rival",
         "ColorTag": "black"
@@ -264,7 +264,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Blazer Low '77 Jumbo.webp",
         "Type": "Loafer",
         "ColorTag": "white"
@@ -282,7 +282,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Blazer Mid '77 Premium.webp",
         "Type": "Loafer",
         "ColorTag": "brown"
@@ -300,7 +300,7 @@
         "Size8": 8,
         "Size9": 0,
         "Size10": 0,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Invincible Run 2.webp",
         "Type": "Boots",
         "ColorTag": "black"
@@ -318,7 +318,7 @@
         "Size8": 8,
         "Size9": 9,
         "Size10": 0,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Metcon 8.webp",
         "Type": "Nike Dunk",
         "ColorTag": "green"
@@ -336,7 +336,7 @@
         "Size8": 0,
         "Size9": 0,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike Pegasus 39.webp",
         "Type": "Pegasus",
         "ColorTag": "orange"
@@ -354,7 +354,7 @@
         "Size8": 0,
         "Size9": 9,
         "Size10": 10,
-        "Size11.5": 11.5,
+        "Size11": 11,
         "Img": "images/Nike React Infinity Run Flyknit 3.webp",
         "Type": "Boots",
         "ColorTag": "white"
